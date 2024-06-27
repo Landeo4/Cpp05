@@ -1,13 +1,29 @@
-#include "Bureaucrat.cpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
     try
     {
-        throw Bureaucrat("bob", 15);
+        Bureaucrat* wq = new Bureaucrat("bob", 15);
+        wq->upgrade();
+        wq->downgrade();
+        Bureaucrat("bob", 151);
+        delete wq;
     }
     catch (std::exception & e)
     {
-        std::cout << "l'exeption a ete intercepter" << std::endl;
+        std::cout << e.what() << std::endl;
+    }
+
+    try
+    {
+        Bureaucrat* wq = new Bureaucrat("bob", 149);
+        wq->downgrade();
+        wq->downgrade();
+        delete wq;
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
     }
 }

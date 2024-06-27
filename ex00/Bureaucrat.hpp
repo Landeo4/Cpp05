@@ -5,35 +5,39 @@
 #include <exception>
 #include <string>
 
-class Bureaucrat : public std::exception
+class Bureaucrat
 {
     public:
-
     Bureaucrat(std::string Name, int grade);
     ~Bureaucrat();
 
-    Bureaucrat(const char* msg)
-        :message(msg)
-        {
-
-        }
-    const char* what() const throw()
+    class GradeTooHighException : public std::exception
     {
-        return message.c_str;
-    }
+        public:
+        const char* what() const throw()
+        {
+            return ("A problem happend between keybord and chair ");
+        }
+    };
+    class GradeTooLowException :  public std::exception
+    {
+        public:
+        const char* what() const throw()
+        {
+            return ("A problem happend between keybord and chair ");
+        }
+    };
 
-    void setName(std::string Name);
     std::string getName(void);
-    void setGrade(int grade);
     int getGrade(void);
     void upgrade();
     void downgrade();
-
     private:
     std::string message;
     const std::string _Name;
     int _Grade;
-
 };
+
+    // std::ostream & operator<<(Bureaucrat & b);
 
 #endif
