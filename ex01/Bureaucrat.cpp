@@ -50,8 +50,20 @@ void Bureaucrat:: downgrade()
     this->_Grade += 1;
 }
 
-// std::ostream & operator<<( std::ostream & o, Bureaucrat const & nb)
-// {
-// 	o << nb;
-// 	return o;
-// }
+std::ostream & operator<<( std::ostream & o, Bureaucrat const & nb)
+{
+	o << nb;
+	return o;
+}
+
+void Bureaucrat::signForm(Form* form)
+{
+    if (form->getSign() == 1)
+    {
+        std::cout << Bureaucrat::getName() << " signed " <<  this->_Name << std::endl;
+    }
+    else
+    {
+        std::cout << Bureaucrat::getName() << " couldn't sign " << this->_Name << " because " << "he has no hand" << std::endl;
+    }
+}
