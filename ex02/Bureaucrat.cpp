@@ -51,7 +51,7 @@ void Bureaucrat:: downgrade()
 }
 
 
-void Bureaucrat::signForm(Form* form)
+void Bureaucrat::signForm(AForm* form)
 {
     if (form->getSign() == 1)
     {
@@ -67,4 +67,9 @@ std::ostream & operator<<( std::ostream & o, Bureaucrat & nb)
 {
 	o << nb.getName() << " Bureaucrat grade " << nb.getGrade();
     return o;
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+    
 }

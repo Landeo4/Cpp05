@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <exception>
@@ -8,13 +8,14 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     public:
-    Form(std::string _name,int gradeSI, int gradeEX);
-    ~Form();
-    Form(const Form & copy);
-    Form &operator=(const Form & copy);
+    AForm(void);
+    AForm(std::string _name,int gradeSI, int gradeEX);
+    ~AForm();
+    AForm(const AForm & copy);
+    AForm &operator=(const AForm & copy);
 
     class GradeTooLowExeption : public std::exception
     {
@@ -48,6 +49,6 @@ class Form
     const int _gradeExecute;
 };
 
-std::ostream & operator<<(std::ostream & o, Form & nb);
+std::ostream & operator<<(std::ostream & o, AForm & nb);
 
 #endif

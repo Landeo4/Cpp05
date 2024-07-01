@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShruberryCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -15,6 +18,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+
     try
     {
         Bureaucrat wq("bob", 15);
@@ -30,7 +34,7 @@ int main()
     std::cout << "NEXT TEST" << std::endl << std::endl;
     try
     {
-        Form wq("test", 20, 20);
+        AForm wq("test", 20, 20);
         Bureaucrat bur("stephan", 14);
         std::cout << wq << std::endl;
         wq.beSigned(bur);
@@ -43,13 +47,26 @@ int main()
 
     try
     {
-        Form wq("test2", 20, 20);
+        AForm wq("test2", 20, 20);
         Bureaucrat bur("stephan", 50);
         std::cout << wq << std::endl;
         wq.beSigned(bur);
         wq.SignForm(bur);
     }
     catch(std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    std::cout << "TRY POUR ARBRE" << std::endl;
+    try
+    {
+        AForm* form = new AForm("test2", 20, 20);
+        std::cout << "avant try voici le form " << form << std::endl;
+        // PresidentialPardonForm wq (form);
+        ShruberryCreationForm wq(form);
+    }
+    catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }

@@ -50,8 +50,8 @@ void Bureaucrat:: downgrade()
     this->_Grade += 1;
 }
 
-// std::ostream & operator<<( std::ostream & o, Bureaucrat const & nb)
-// {
-// 	o << nb;
-// 	return o;
-// }
+std::ostream & operator<<( std::ostream & o, Bureaucrat & nb)
+{
+	o << nb.getName() << " Bureaucrat grade " << nb.getGrade();
+    return o;
+}
