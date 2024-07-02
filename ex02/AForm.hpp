@@ -5,6 +5,9 @@
 #include <exception>
 #include <string>
 #include "Bureaucrat.hpp"
+#include "ShruberryCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Bureaucrat;
 
@@ -41,6 +44,8 @@ class AForm
     int getGradeExecute(void);
     void beSigned(Bureaucrat bur);
     void SignForm(Bureaucrat bur);
+    void execute(Bureaucrat const & executor) const ;
+    bool executeFormAction(std::string name);
 
     private:
     const std::string _Name;

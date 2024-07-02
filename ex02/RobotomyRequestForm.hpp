@@ -16,6 +16,7 @@ class RobotomyRequestForm
     RobotomyRequestForm &operator=(const RobotomyRequestForm& copy);
     ~RobotomyRequestForm();
 
+    void execute(AForm form);
     private:
     AForm* _target;
 };

@@ -7,6 +7,31 @@ ShruberryCreationForm::ShruberryCreationForm(void)
 
 ShruberryCreationForm::ShruberryCreationForm(AForm* form)
 {
+
+}
+
+
+ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm & copy)
+{
+    *this = copy;
+}
+
+ShruberryCreationForm & ShruberryCreationForm:: operator=(const ShruberryCreationForm& copy)
+{
+	if (this != &copy)
+	{
+		this->_target = copy._target;
+	}
+	return *this;
+}
+
+ShruberryCreationForm::~ShruberryCreationForm()
+{
+
+}
+
+void ShruberryCreationForm::execute(AForm *form)
+{
     std::cout << "debut de method" << std::endl;
     std::string file = form->getName() + "_shrubbery";
     // std::ofstream file = name;
@@ -43,22 +68,3 @@ ShruberryCreationForm::ShruberryCreationForm(AForm* form)
 //ShrubberyCreationForm: Required grades: sign 145, exec 137
 // Create a file <target>_shrubbery in the working directory, and writes ASCII trees
 // inside it.
-
-ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm & copy)
-{
-    *this = copy;
-}
-
-ShruberryCreationForm & ShruberryCreationForm:: operator=(const ShruberryCreationForm& copy)
-{
-	if (this != &copy)
-	{
-		this->_target = copy._target;
-	}
-	return *this;
-}
-
-ShruberryCreationForm::~ShruberryCreationForm()
-{
-
-}

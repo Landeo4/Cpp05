@@ -50,7 +50,6 @@ void Bureaucrat:: downgrade()
     this->_Grade += 1;
 }
 
-
 void Bureaucrat::signForm(AForm* form)
 {
     if (form->getSign() == 1)
@@ -63,7 +62,7 @@ void Bureaucrat::signForm(AForm* form)
     }
 }
 
-std::ostream & operator<<( std::ostream & o, Bureaucrat & nb)
+std::ostream & operator<<(std::ostream & o, Bureaucrat & nb)
 {
 	o << nb.getName() << " Bureaucrat grade " << nb.getGrade();
     return o;
@@ -71,5 +70,8 @@ std::ostream & operator<<( std::ostream & o, Bureaucrat & nb)
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-    
+    if (form.executeFormAction(form.execute) == 0)
+        std::cout << this->_Name << " executed " << form._Name << std::endl;
+    else
+        std::cout << "error happend when trying to execute the form " << form._Name;
 }

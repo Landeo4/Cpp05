@@ -59,8 +59,36 @@ void AForm:: SignForm(Bureaucrat bur)
         std::cout << bur.getName() << " couldn't sign " << this->getName() << " because " << this->getGradeSign() << std::endl;
 }
 
-std::ostream & operator<<( std::ostream & o, AForm & nb)
+std::ostream & operator<<(std::ostream & o, AForm & nb)
 {
 	o << nb.getName() << " Bureaucrat gradeExecute " << nb.getGradeExecute() << " GradeSign" << nb.getGradeSign() << std::endl;
     return o;
+}
+
+void AForm::execute(Bureaucrat const & executor) const
+{
+    if (this->_sign == 1)
+        executor._Grade < this->_gradeExecute;
+    else
+        throw GradeTooLowExeption();
+}
+
+bool AForm::executeFormAction(std::string name)
+{
+    if (name.compare("ShruberryCreationForm"))
+    {
+        ShruberryCreationForm obj;
+        return 0;
+    }
+    else if (name.compare("RobotomyRequestForm"))
+    {
+        RobotomyRequestForm ojb;
+        return 0;
+    }
+    else if (name.compare("PresidentPardonForm"))
+    {
+        PresidentialPardonForm job();
+        return 0;
+    }
+    return 1;
 }

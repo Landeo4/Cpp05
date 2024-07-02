@@ -17,6 +17,7 @@ class ShruberryCreationForm
     ShruberryCreationForm &operator=(const ShruberryCreationForm& copy);
     ~ShruberryCreationForm();
 
+    void execute(AForm *form);
     private:
     AForm* _target;
 };
