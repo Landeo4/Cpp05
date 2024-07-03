@@ -1,22 +1,25 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
-#include <iomanip>
+#include <iostream>
+#include <exception>
+#include <string>
+#include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include <cstdlib>
 
 class AForm;
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public AForm
 {
     public:
     RobotomyRequestForm(void);
-    RobotomyRequestForm(AForm form);
+    RobotomyRequestForm(AForm *form);
     RobotomyRequestForm(const RobotomyRequestForm & copy);
     RobotomyRequestForm &operator=(const RobotomyRequestForm& copy);
     ~RobotomyRequestForm();
 
-    void execute(AForm form);
+    void RobotomyRequestForm::execute(Bureaucrat const & form);
+
     private:
     AForm* _target;
 };

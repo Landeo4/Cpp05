@@ -1,6 +1,9 @@
 #include "AForm.hpp"
 
-AForm::AForm(void): _Name("not attribute"), _sign(0),  _gradeSign(0), _gradeExecute(0) {}
+AForm::AForm() : _gradeExecute(0), _gradeSign(0)
+{
+
+}
 
 AForm::AForm(std::string _name, int gradeSI, int gradeEX) : _Name(_name), _sign(0),  _gradeSign(gradeSI), _gradeExecute(gradeEX) {}
 
@@ -21,7 +24,7 @@ AForm::~AForm()
 
 }
 
-std::string AForm::getName(void)
+std::string AForm::getName(void) const
 {
     return this->_Name;
 }
@@ -31,12 +34,12 @@ bool AForm::getSign(void)
     return this->_sign;
 }
 
-int AForm::getGradeSign(void)
+int AForm::getGradeSign(void) const
 {
     return this->_gradeSign;
 }
 
-int AForm::getGradeExecute(void)
+int AForm::getGradeExecute(void) const
 {
     return this->_gradeExecute;
 }
@@ -59,36 +62,8 @@ void AForm:: SignForm(Bureaucrat bur)
         std::cout << bur.getName() << " couldn't sign " << this->getName() << " because " << this->getGradeSign() << std::endl;
 }
 
-std::ostream & operator<<(std::ostream & o, AForm & nb)
+std::ostream & operator<<( std::ostream & o, AForm & nb)
 {
 	o << nb.getName() << " Bureaucrat gradeExecute " << nb.getGradeExecute() << " GradeSign" << nb.getGradeSign() << std::endl;
     return o;
-}
-
-void AForm::execute(Bureaucrat const & executor) const
-{
-    if (this->_sign == 1)
-        executor._Grade < this->_gradeExecute;
-    else
-        throw GradeTooLowExeption();
-}
-
-bool AForm::executeFormAction(std::string name)
-{
-    if (name.compare("ShruberryCreationForm"))
-    {
-        ShruberryCreationForm obj;
-        return 0;
-    }
-    else if (name.compare("RobotomyRequestForm"))
-    {
-        RobotomyRequestForm ojb;
-        return 0;
-    }
-    else if (name.compare("PresidentPardonForm"))
-    {
-        PresidentialPardonForm job();
-        return 0;
-    }
-    return 1;
 }

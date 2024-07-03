@@ -2,12 +2,12 @@
 
 RobotomyRequestForm::RobotomyRequestForm(void)
 {
-    
+
 }
 
-RobotomyRequestForm::RobotomyRequestForm(AForm form)
+RobotomyRequestForm::RobotomyRequestForm(AForm* form)
 {
-    this->_target = &form;
+    this->_target = form;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & copy)
@@ -29,12 +29,17 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-void RobotomyRequestForm::execute(AForm form)
+void RobotomyRequestForm::execute(Bureaucrat const & form)
 {
-    std::cout << " Some drilling noises " << std::endl;
-    int j = rand();
-    if (j > (RAND_MAX / 2))
-        std::cout << form.getName() << " has been robotomized" << std::endl;
+    if (this->getGradeSign() == 72 && this->getGradeExecute() == 45)
+    {
+        std::cout << " Some drilling noises " << std::endl;
+        int j = rand();
+        if (j > (RAND_MAX / 2))
+            std::cout << this->getName() << " has been robotomized" << std::endl;
+        else
+            std::cout << "the robotomy failed" << std::endl;
+    }
     else
-        std::cout << "the robotomy failed" << std::endl;
+        throw ExecuteProblem();
 }

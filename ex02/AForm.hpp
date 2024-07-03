@@ -5,16 +5,16 @@
 #include <exception>
 #include <string>
 #include "Bureaucrat.hpp"
-#include "ShruberryCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Bureaucrat;
 
 class AForm
 {
     public:
-    AForm(void);
+    AForm::AForm();
     AForm(std::string _name,int gradeSI, int gradeEX);
     ~AForm();
     AForm(const AForm & copy);
@@ -38,14 +38,22 @@ class AForm
         }
     };
 
-    std::string getName(void);
+    class ExecuteProblem : public std::exception
+    {
+        public:
+        const char* what() const throw()
+        {
+            return ("A problem happen when trying to execute the Form ");
+        }
+    };
+
+    std::string getName(void) const;
     bool getSign(void);
-    int getGradeSign(void);
-    int getGradeExecute(void);
+    virtual int getGradeSign(void) const;
+    virtual int getGradeExecute(void) const;
     void beSigned(Bureaucrat bur);
     void SignForm(Bureaucrat bur);
-    void execute(Bureaucrat const & executor) const ;
-    bool executeFormAction(std::string name);
+    virtual void AForm::execute(Bureaucrat const & executor) const = 0;
 
     private:
     const std::string _Name;

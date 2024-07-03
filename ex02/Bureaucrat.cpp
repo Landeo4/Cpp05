@@ -70,8 +70,14 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat & nb)
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-    if (form.executeFormAction(form.execute) == 0)
-        std::cout << this->_Name << " executed " << form._Name << std::endl;
-    else
-        std::cout << "error happend when trying to execute the form " << form._Name;
+    try
+    {
+        form.execute(*this);
+    }
+    catch (std::exception &a)
+    {
+        std::cout << a.what() << std::endl;
+    }
 }
+
+//std::cout << "A problem happend when trying to execute the Form" << std::endl;
