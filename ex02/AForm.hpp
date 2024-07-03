@@ -4,19 +4,17 @@
 #include <iostream>
 #include <exception>
 #include <string>
+#include <fstream>
 #include "Bureaucrat.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
 
 class Bureaucrat;
 
 class AForm
 {
     public:
-    AForm::AForm();
+    AForm();
     AForm(std::string _name,int gradeSI, int gradeEX);
-    ~AForm();
+    virtual ~AForm();
     AForm(const AForm & copy);
     AForm &operator=(const AForm & copy);
 
@@ -48,12 +46,12 @@ class AForm
     };
 
     std::string getName(void) const;
-    bool getSign(void);
-    virtual int getGradeSign(void) const;
-    virtual int getGradeExecute(void) const;
+    bool getSign(void) const;
+    int getGradeSign(void) const;
+    int getGradeExecute(void) const;
     bool beSigned(Bureaucrat bur);
     void SignForm(Bureaucrat bur);
-    virtual void AForm::execute(Bureaucrat const & executor) const = 0;
+    virtual void execute(Bureaucrat const & executor) const = 0;
 
     private:
     const std::string _Name;

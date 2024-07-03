@@ -1,5 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm() : AForm(NULL, 0, 0)
+{
+
+}
+
 PresidentialPardonForm::PresidentialPardonForm(std::string _Name) : AForm(_Name, 25, 5)
 {
 
@@ -29,7 +34,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & form)
+void PresidentialPardonForm::execute(Bureaucrat const & form) const
 {
     if (this->getGradeSign() <= 25 && this->getGradeExecute() <= 5 && this->getSign() == 1)
     {

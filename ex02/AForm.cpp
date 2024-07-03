@@ -1,6 +1,6 @@
 #include "AForm.hpp"
 
-AForm::AForm() : _gradeExecute(0), _gradeSign(0)
+AForm::AForm() :  _sign(0), _gradeSign(0), _gradeExecute(0)
 {
 
 }
@@ -29,7 +29,7 @@ std::string AForm::getName(void) const
     return this->_Name;
 }
 
-bool AForm::getSign(void)
+bool AForm::getSign(void) const
 {
     return this->_sign;
 }

@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "ShruberryCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
@@ -20,27 +20,25 @@ int main()
         std::cout << e.what() << std::endl;
     }
     std::cout << "TRY POUR Robo" << std::endl;
-    try
-    {
-        AForm form("test", 10, 10);
-        RobotomyRequestForm essaie(form);
-        essaie.execute(form);
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    std::cout << "TRY POUR PRESIDENT" << std::endl;
-    try
-    {
-        AForm form("test", 10, 10);
-        PresidentialPardonForm essaie(form);
-        essaie.execute(form);
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    // try
+    // {
+    //     RobotomyRequestForm form("test2");
+    // }
+    // catch (std::exception & e)
+    // {
+    //     std::cout << e.what() << std::endl;
+    // }
+    // std::cout << "TRY POUR PRESIDENT" << std::endl;
+    // try
+    // {
+    //     AForm form("test", 10, 10);
+    //     PresidentialPardonForm essaie(form);
+    //     essaie.execute(form);
+    // }
+    // catch (std::exception & e)
+    // {
+    //     std::cout << e.what() << std::endl;
+    // }
 }
 
 /*

@@ -1,5 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : AForm(NULL, 0, 0)
+{
+    
+}
+
 RobotomyRequestForm::RobotomyRequestForm(std::string _Name) : AForm(_Name, 72, 45)
 {
     
@@ -29,7 +34,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & form)
+void RobotomyRequestForm::execute(Bureaucrat const & form) const
 {
     if (this->getGradeSign() == 72 && this->getGradeExecute() == 45)
     {
