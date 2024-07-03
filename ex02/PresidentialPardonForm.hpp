@@ -12,13 +12,13 @@ class AForm;
 class PresidentialPardonForm : public AForm
 {
     public:
-    PresidentialPardonForm(void);
+    PresidentialPardonForm(std::string _Name);
     PresidentialPardonForm(AForm *form);
     PresidentialPardonForm(const PresidentialPardonForm & copy);
     PresidentialPardonForm &operator=(const PresidentialPardonForm& copy);
     ~PresidentialPardonForm();
 
-    // void PresidentialPardonForm::execute(Bureaucrat const & form);
+    void PresidentialPardonForm::execute(Bureaucrat const & form);
 
     private:
     AForm* _target;

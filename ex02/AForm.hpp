@@ -51,7 +51,7 @@ class AForm
     bool getSign(void);
     virtual int getGradeSign(void) const;
     virtual int getGradeExecute(void) const;
-    void beSigned(Bureaucrat bur);
+    bool beSigned(Bureaucrat bur);
     void SignForm(Bureaucrat bur);
     virtual void AForm::execute(Bureaucrat const & executor) const = 0;
 

@@ -44,14 +44,16 @@ int AForm::getGradeExecute(void) const
     return this->_gradeExecute;
 }
 
-void AForm::beSigned(Bureaucrat bur)
+bool AForm::beSigned(Bureaucrat bur)
 {
     if (this->_gradeSign >= bur.getGrade())
     {
         this->_sign = 1;
-    }
+        return (1)
+;    }
     else
         throw GradeTooLowExeption();
+    return (0);
 }
 
 void AForm:: SignForm(Bureaucrat bur)

@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string _Name) : AForm(_Name, 145, 137)
 {
 
 }

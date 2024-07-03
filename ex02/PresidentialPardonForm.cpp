@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void)
+PresidentialPardonForm::PresidentialPardonForm(std::string _Name) : AForm(_Name, 25, 5)
 {
 
 }
@@ -49,5 +49,4 @@ void RobotomyRequestForm::execute(AForm form)
     else
         std::cout << "the robotomy failed" << std::endl;
 }
-
 */
