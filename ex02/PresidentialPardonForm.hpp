@@ -18,7 +18,7 @@ class PresidentialPardonForm : public AForm
     PresidentialPardonForm &operator=(const PresidentialPardonForm& copy);
     ~PresidentialPardonForm();
 
-    void PresidentialPardonForm::execute(Bureaucrat const & form);
+    // void PresidentialPardonForm::execute(Bureaucrat const & form);
 
     private:
     AForm* _target;

@@ -19,7 +19,7 @@ class ShrubberyCreationForm : public AForm
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm& copy);
     ~ShrubberyCreationForm();
 
-    void ShrubberyCreationForm::execute(Bureaucrat const & form);
+    // void ShrubberyCreationForm::execute(Bureaucrat const & form);
 
     private:
     AForm* _target;

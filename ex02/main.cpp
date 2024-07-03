@@ -61,10 +61,11 @@ int main()
     std::cout << "TRY POUR ARBRE" << std::endl;
     try
     {
-        AForm* form = new AForm("test2", 20, 20);
+        ShrubberyCreationForm form("test2");
+        // AForm* form = new ShrubberyCreationForm("test2", 20, 20);
         std::cout << "avant try voici le form " << form << std::endl;
         // PresidentialPardonForm wq (form);
-        ShruberryCreationForm wq(form);
+        ShrubberyCreationForm wq(form);
     }
     catch (std::exception & e)
     {

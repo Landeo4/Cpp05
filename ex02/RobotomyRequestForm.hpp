@@ -18,7 +18,7 @@ class RobotomyRequestForm : public AForm
     RobotomyRequestForm &operator=(const RobotomyRequestForm& copy);
     ~RobotomyRequestForm();
 
-    void RobotomyRequestForm::execute(Bureaucrat const & form);
+    // void RobotomyRequestForm::execute(Bureaucrat const & form);
 
     private:
     AForm* _target;

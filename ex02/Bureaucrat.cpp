@@ -52,7 +52,7 @@ void Bureaucrat:: downgrade()
 
 void Bureaucrat::signForm(AForm* form)
 {
-    if (form->getSign() == 1)
+    if (form->beSigned() == 1)
     {
         std::cout << Bureaucrat::getName() << " signed " <<  this->_Name << std::endl;
     }
