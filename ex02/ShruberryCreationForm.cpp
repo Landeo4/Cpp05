@@ -36,8 +36,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (executor.getGrade() <= this->getGradeSign())
+    if (executor.getGrade() <= this->getGradeSign() && this->getSign() == 1)
     {
+        std::cout << "je suis rentrer dans le if" << std::endl;
         std::string    filename = this->getName() + "_shrubbery"; 
         std::ofstream out(filename.c_str());
         out.exceptions(std::ofstream::failbit | std::ofstream::badbit);

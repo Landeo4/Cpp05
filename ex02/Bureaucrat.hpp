@@ -43,7 +43,7 @@ class Bureaucrat
 
     private:
     std::string message;
-    const std::string _Name;
+    std::string _Name;
     int _Grade;
 };
 

@@ -46,6 +46,7 @@ int AForm::getGradeExecute(void) const
 
 bool AForm::beSigned(Bureaucrat bur)
 {
+    std::cout << "je rentre dans beSigned" << std::endl;
     if (this->_gradeSign >= bur.getGrade())
     {
         this->_sign = 1;

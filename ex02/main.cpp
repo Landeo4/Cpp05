@@ -11,8 +11,7 @@ int main()
     {
         ShrubberyCreationForm form("good");
         Bureaucrat dan("Dan", 10);
-        // AForm* form = new ShrubberyCreationForm("test2", 20, 20);
-        std::cout << "avant try voici le form " << form << std::endl;
+        form.beSigned(dan);
         form.execute(dan);
     }
     catch (std::exception & e)
@@ -20,13 +19,11 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "TRY POUR SHRUB BAD" << std::endl;
+    std::cout << "TRY POUR SHRUB BAD" << std::endl << std::endl;
     try
     {
         ShrubberyCreationForm form("bad");
         Bureaucrat dan("Dan", 142);
-        // AForm* form = new ShrubberyCreationForm("test2", 20, 20);
-        std::cout << "avant try voici le form " << form << std::endl;
         form.execute(dan);
     }
     catch (std::exception & e)
@@ -34,27 +31,59 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-
     std::cout << "TRY POUR Robo" << std::endl;
-    // try
-    // {
-    //     RobotomyRequestForm form("test2");
-    // }
-    // catch (std::exception & e)
-    // {
-    //     std::cout << e.what() << std::endl;
-    // }
-    // std::cout << "TRY POUR PRESIDENT" << std::endl;
-    // try
-    // {
-    //     AForm form("test", 10, 10);
-    //     PresidentialPardonForm essaie(form);
-    //     essaie.execute(form);
-    // }
-    // catch (std::exception & e)
-    // {
-    //     std::cout << e.what() << std::endl;
-    // }
+    try
+    {
+        RobotomyRequestForm form("good");
+        Bureaucrat dan("Dan", 10);
+        form.beSigned(dan);
+        form.execute(dan);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    try
+    {
+        RobotomyRequestForm form("good");
+        Bureaucrat dan("Dan", 10);
+        form.execute(dan);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    std::cout << "TRY POUR President" << std::endl;
+    try
+    {
+        RobotomyRequestForm form("test2");
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    try
+    {
+        PresidentialPardonForm form("good");
+        Bureaucrat dan("Dan", 10);
+        form.beSigned(dan);
+        form.execute(dan);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    try
+    {
+        PresidentialPardonForm form("good");
+        Bureaucrat dan("Dan", 10);
+        form.execute(dan);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 }
 
 /*

@@ -16,16 +16,23 @@ Bureaucrat::Bureaucrat(std::string Name, int grade) : _Name(Name), _Grade(grade)
         return ;
     }
 }
+
 Bureaucrat::Bureaucrat(const Bureaucrat & copy)
 {
     *this = copy;
 }
+
 Bureaucrat &Bureaucrat:: operator=(const Bureaucrat & copy)
 {
     if (this != &copy)
-        *this = copy;
+    {
+        this->_Grade = copy._Grade;
+        this->_Name = copy._Name;
+    }
+        // *this = copy;
     return *this;
 }
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Destructor called" << std::endl;
