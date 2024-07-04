@@ -11,7 +11,10 @@ class AForm;
 class Bureaucrat
 {
     public:
+    Bureaucrat();
     Bureaucrat(std::string Name, int grade);
+    Bureaucrat(const Bureaucrat & copy);
+    Bureaucrat & operator=(const Bureaucrat & copy);
     ~Bureaucrat();
 
     class GradeTooHighException : public std::exception
@@ -32,7 +35,7 @@ class Bureaucrat
     };
 
     std::string getName(void);
-    int getGrade(void);
+    int getGrade(void) const;
     void upgrade();
     void downgrade();
     void signForm(AForm* form);

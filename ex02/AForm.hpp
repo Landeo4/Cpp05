@@ -5,6 +5,7 @@
 #include <exception>
 #include <string>
 #include <fstream>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;

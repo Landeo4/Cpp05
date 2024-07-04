@@ -13,7 +13,7 @@ class RobotomyRequestForm : public AForm
     RobotomyRequestForm &operator=(const RobotomyRequestForm& copy);
     ~RobotomyRequestForm();
 
-    void execute(Bureaucrat const & form) const;
+    void execute(Bureaucrat const & executor) const;
 
     private:
     AForm* _target;

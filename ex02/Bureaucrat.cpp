@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 
+//constrcutor / destructor
+Bureaucrat::Bureaucrat() : _Name(NULL) {}
 Bureaucrat::Bureaucrat(std::string Name, int grade) : _Name(Name), _Grade(grade)
 {
     std::cout << "Constructor called" << std::endl;
@@ -14,18 +16,29 @@ Bureaucrat::Bureaucrat(std::string Name, int grade) : _Name(Name), _Grade(grade)
         return ;
     }
 }
-
+Bureaucrat::Bureaucrat(const Bureaucrat & copy)
+{
+    *this = copy;
+}
+Bureaucrat &Bureaucrat:: operator=(const Bureaucrat & copy)
+{
+    if (this != &copy)
+        *this = copy;
+    return *this;
+}
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Destructor called" << std::endl;
 }
+
+// Method
 
 std::string Bureaucrat:: getName(void)
 {
     return this->_Name;
 }
 
-int Bureaucrat::getGrade(void)
+int Bureaucrat::getGrade(void) const
 {
     return this->_Grade;
 }

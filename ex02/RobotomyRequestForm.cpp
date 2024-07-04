@@ -34,9 +34,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & form) const
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if (this->getGradeSign() == 72 && this->getGradeExecute() == 45)
+    if (executor.getGrade() <= this->getGradeSign())
     {
         std::cout << " Some drilling noises " << std::endl;
         int j = rand();
