@@ -7,19 +7,21 @@
 int main()
 {
     std::cout << "TRY POUR SHRUB GOOD" << std::endl;
+    // il a bespon sign 145 exec 137
     try
     {
         ShrubberyCreationForm form("good");
         Bureaucrat dan("Dan", 10);
         form.beSigned(dan);
         form.execute(dan);
+        dan.executeForm(form);
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "TRY POUR SHRUB BAD" << std::endl << std::endl;
+    std::cout << std::endl << "TRY POUR SHRUB BAD" << std::endl;
     try
     {
         ShrubberyCreationForm form("bad");
@@ -31,7 +33,32 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "TRY POUR Robo" << std::endl;
+
+    std::cout << std::endl << "TRY POUR ROBO" << std::endl;
+    try
+    {
+        RobotomyRequestForm form("good");
+        Bureaucrat dan("Dan", 10);
+        form.beSigned(dan);
+        form.execute(dan);
+        dan.executeForm(form);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << std::endl << "FLOOD POUR 50% POUR ROBO" << std::endl;
+    try
+    {
+        RobotomyRequestForm form("good");
+        Bureaucrat dan("Dan", 10);
+        form.beSigned(dan);
+        form.execute(dan);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     try
     {
         RobotomyRequestForm form("good");
@@ -54,21 +81,15 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "TRY POUR President" << std::endl;
-    try
-    {
-        RobotomyRequestForm form("test2");
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+
+    std::cout << std::endl << "TRY POUR President" << std::endl;
     try
     {
         PresidentialPardonForm form("good");
         Bureaucrat dan("Dan", 10);
         form.beSigned(dan);
         form.execute(dan);
+        dan.executeForm(form);
     }
     catch (std::exception & e)
     {

@@ -38,7 +38,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if (executor.getGrade() <= this->getGradeSign() && this->getSign() == 1)
     {
-        std::cout << "je suis rentrer dans le if" << std::endl;
         std::string    filename = this->getName() + "_shrubbery"; 
         std::ofstream out(filename.c_str());
         out.exceptions(std::ofstream::failbit | std::ofstream::badbit);
@@ -73,19 +72,3 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     else
         throw ExecuteProblem();
 }
-
-/*
-void RobotomyRequestForm::execute(AForm form)
-{
-    std::cout << " Some drilling noises " << std::endl;
-    int j = rand();
-    if (j > (RAND_MAX / 2))
-        std::cout << form.getName() << " has been robotomized" << std::endl;
-    else
-        std::cout << "the robotomy failed" << std::endl;
-}
-void PresidentialPardonForm::execute(AForm form)
-{
-    std::cout << form.getName() << " has been pardoned by Zaphod Beeblerox" << std::endl;
-}
-*/
