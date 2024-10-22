@@ -21,7 +21,7 @@ class Form
         public:
         const char* what() const throw()
         {
-            return ("A problem happen when trying to signed ");
+            return ("A problem happen when trying to signed (too low)");
         }
     };
 
@@ -30,7 +30,7 @@ class Form
         public:
         const char* what() const throw()
         {
-            return ("A problem when trying to downgrade the Bureaucrat ");
+            return ("A problem happen when trying to signed (too high)");
         }
     };
 

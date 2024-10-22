@@ -16,7 +16,7 @@ class Bureaucrat
         public:
         const char* what() const throw()
         {
-            return ("A problem happend when trying to assign the value to the Bureaucrat ");
+            return ("A problem happend when trying to assign the value to the Bureaucrat (too high) ");
         }
     };
     class GradeTooLowException :  public std::exception
@@ -24,7 +24,7 @@ class Bureaucrat
         public:
         const char* what() const throw()
         {
-            return ("A problem happend when trying to assign the value to the Bureaucrat ");
+            return ("A problem happend when trying to assign the value to the Bureaucrat (too low)");
         }
     };
 
