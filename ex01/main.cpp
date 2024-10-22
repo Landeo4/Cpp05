@@ -15,8 +15,10 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+    std::cout << "NEXT TEST 1" << std::endl << std::endl;
     try
     {
+
         Bureaucrat wq("bob", 15);
         std::cout << wq << std::endl;
         wq.downgrade();
@@ -27,7 +29,7 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "NEXT TEST" << std::endl << std::endl;
+    std::cout << "NEXT TEST 2" << std::endl << std::endl;
     try
     {
         Form wq("test", 20, 20);
@@ -40,7 +42,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+    std::cout << "NEXT TEST 3" << std::endl << std::endl;
     try
     {
         Form wq("test2", 20, 20);
@@ -59,3 +61,5 @@ int main()
 // surcharge d'operateur (good)
 // beSigned()
 //signForm output
+
+//

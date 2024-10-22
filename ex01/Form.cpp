@@ -59,6 +59,6 @@ void Form:: SignForm(Bureaucrat bur)
 
 std::ostream & operator<<( std::ostream & o, Form & nb)
 {
-	o << nb.getName() << " Bureaucrat gradeExecute " << nb.getGradeExecute() << " GradeSign" << nb.getGradeSign() << std::endl;
+	o << nb.getName() << " Bureaucrat gradeExecute " << nb.getGradeExecute() << " GradeSign " << nb.getGradeSign() << std::endl;
     return o;
 }

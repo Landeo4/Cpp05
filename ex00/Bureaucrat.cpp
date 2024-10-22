@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat(std::string Name, int grade) : _Name(Name), _Grade(grade)
         throw GradeTooHighException();
         return ;
     }
-    else if (this->_Grade < 0)
+    else if (this->_Grade < 1)
     {
         throw GradeTooLowException();
         return ;
