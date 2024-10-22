@@ -40,7 +40,6 @@ AForm* Intern::makeForm(std::string name, std::string target)
     {
         case 'p' :
         {
-
             PresidentialPardonForm* ptr = new PresidentialPardonForm(target);
             return ptr;
         }
